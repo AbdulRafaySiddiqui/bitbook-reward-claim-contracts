@@ -23,8 +23,8 @@ contract BitBookRewardClaim is Ownable, AccessControl  {
     event SignerAdminUpdated(address admin);
     event ClaimPausedUpdated(bool paused);
 
-    constructor(IERC20 _bitbook) {
-        bitbook = _bitbook;
+    constructor() {
+        bitbook = IERC20(0xD48474E7444727bF500a32D5AbE01943f3A59A64);
         uint chainId;
         assembly {
             chainId := chainid()

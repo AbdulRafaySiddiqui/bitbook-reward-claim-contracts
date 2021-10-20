@@ -27,6 +27,7 @@ const ROUTERS = {
 }
 
 const BITBOOK_ADDRESS = '0xD48474E7444727bF500a32D5AbE01943f3A59A64'
+const REWARD_SIGNER = '0xC3279c74ecE9A080b3C36B4036e47FF8Aef6001b'
 
 async function main() {
     const [deployer] = await ethers.getSigners()
@@ -36,6 +37,7 @@ async function main() {
     console.log('Reward Claim: ', rewardClaim.address)
 
     await rewardClaim.grandRewardSignerRole(deployer.address);
+    await rewardClaim.grandRewardSignerRole(REWARD_SIGNER);
 
     await sleep(10)
 
